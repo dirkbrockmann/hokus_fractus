@@ -2,12 +2,13 @@
 // 1. initialization, 2. update, 3. iteration
 // this is used by index.js, e.g. to initialize the explorable
 
-import {initialize as model_init, update as model_update, go as model_go} from "./model.js"
-import {initialize as visual_init, update as visual_update, go as visual_go} from "./viz.js"
+import {initialize as model_init, iterate as model_iterate} from "./model.js"
+import {initialize as visual_init, iterate as visual_iterate} from "./viz.js"
 
 function iterate (display,config) {
-	model_go();
-	visual_go(display,config);
+	const steps = model_iterate();
+	visual_iterate(display,config);
+	return steps;
 };
 
 function initialize (display,config) {	
@@ -15,9 +16,5 @@ function initialize (display,config) {
 	visual_init(display,config); 
 };
 
-function update (display,config) {
-	model_update();
-	visual_update(display,config);
-}
 
-export {iterate,initialize,update}
+export {iterate,initialize}

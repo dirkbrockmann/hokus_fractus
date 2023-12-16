@@ -31,7 +31,6 @@ const load = function (container_id,config=cfg) {
 	setup_interactions(display,controls,config); // this connects actions to the widgets, like starting the simulation, pausing it, resetting variables, anything connected to the change of a widget state.
 
 // initializing the system
-	
 	setup_simulation(display,config)
 	
 }

@@ -1,12 +1,12 @@
 {
-  "name": "@explorables/explorable_template",
-  "title": "Explorable Template",
+  "name": "@explorables/hokus_fractus",
+  "title": "Hokus Fractus",
   "version": "1.0.1",
   "license": "CC-BY-4.0",
-  "description": "This is a template for making a complexity explorable. The template can be used to create a new complexity explorable. This template implements the Vicsek Model.",
+  "description": "A collection of regular fractals that illustrates the nature of self-similarity",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dirkbrockmann/explorable_template.git"
+    "url": "git+https://github.com/dirkbrockmann/hokus_fractus.git"
   },
   "author": "Dirk Brockmann (https://rocs.hu-berlin.de)",
   "main": "./dist/index.js",

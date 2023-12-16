@@ -6,63 +6,56 @@
 // used for the actual visualizations are also imported to viz.js
 
 import * as d3 from "d3"
+import fractals from "./fractals.js"
 import param from "./parameters.js"
-import {agents} from "./model.js"
+import {state} from "./model.js"
 
-const L = param.L;
-const X = d3.scaleLinear().domain([0,L]);
-const Y = d3.scaleLinear().domain([0,L]);
 
-// the initialization function, this is bundled in simulation.js with the initialization of
-// the model and effectively executed in index.js when the whole explorable is loaded
-// typically here all the elements in the SVG or CANVAS element are set.
+const X = d3.scaleLinear().domain(param.xrange);
+const Y = d3.scaleLinear().domain(param.yrange);
+const line = d3.line().x(d=>X(d.x)).y(d=>Y(d.y))
 
 const initialize = (display,config) => {
-
+	
 	const W = config.display_size.width;
 	const H = config.display_size.height;
 	
 	X.range([0,W]);
-	Y.range([0,H]);
-		
+	Y.range([H,0]);
+
 	display.selectAll("#origin").remove();
-	display.selectAll(".node").remove();
-	
 	const origin = display.append("g").attr("id","origin")
-	
-	origin.selectAll(".node").data(agents).enter().append("circle")
-		.attr("class","node")
-		.attr("cx",d=>X(d.x))
-		.attr("cy",d=>Y(d.y))
-		.attr("r",X(param.agentsize/2))
-		.style("fill", d => param.color_by_heading.widget.value() ? d3.interpolateSinebow(d.theta/2/Math.PI)  : "black")
-	
+	origin.selectAll(".curve").data([state.points]).enter().append("path")
+		.attr("class","curve")
+		.attr("d",line)
+		.style("stroke","black")
+		.style("stroke-width","2px")
+		.style("fill","none")
 };
 
-// the go function, this is bundled in simulation.js with the go function of
-// the model, typically this is the iteration function of the model that
-// is run in the explorable. It contains the code that updates the parts of the display
-// panel as a function of the model quantities.
 
-const go = (display,config) => {
+const iterate = (display,config) => {
 	
-	display.selectAll(".node")
-		.attr("cx",d=>X(d.x))
-		.attr("cy",d=>Y(d.y))
-		.style("fill", d => param.color_by_heading.widget.value() ? d3.interpolateSinebow(d.theta/2/Math.PI)  : "black")
+	const origin = display.select("#origin");
+	
+	const tantor = origin.selectAll(".curve").attr("class","curve_old")
+
+	
+	const onk = origin.selectAll(".curve").data([state.new_points_source]).enter().append("path")
+		.attr("class","curve")
+		.attr("d",line)
+		.style("stroke","darkred")
+		.style("stroke-width","1px")
+		.style("fill","none")
+
+	tantor.style("stroke","grey");
+	tantor.transition().duration(1000).style("opacity",0).remove()
+
+	
+	onk.data([state.new_points_target]).transition().duration(500).attr("d",line)
+		.transition().style("stroke","black").style("stroke-width","1px")
 	
 }
 
-// the update function is usually not required for running the explorable. Sometimes
-// it makes sense to have it, e.g. to update the visualization, if a parameter is changed,
-// e.g. a radio button is pressed, when the system is not running, e.g. when it is paused.
 
-const update = (display,config) => {
-	
-	display.selectAll(".node")
-		.style("fill", d => param.color_by_heading.widget.value() ? d3.interpolateSinebow(d.theta/2/Math.PI)  : "black")
-	
-}
-
-
-export {initialize,go,update}
+export {initialize,iterate}
