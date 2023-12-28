@@ -4,13 +4,13 @@
 // controls.js
 
 export default { 
-	widgets:{
+		widgets:{
 		fontsize:20,
 		playbutton_size: 120,
-		playbutton_anchor:{x:3,y:3},
+		playbutton_anchor:{x:2,y:3},
 		resetbutton_size: 80,
-		resetbutton_anchor:{x:3,y:7},
-		radio_anchor:{x:6,y:2},
+		resetbutton_anchor:{x:2,y:7},
+		radio_anchor:{x:5,y:2},
 		radio_size:320,
 		radio_orientation:"vertical",
 		radio_label_position:"right",

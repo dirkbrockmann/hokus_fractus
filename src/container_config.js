@@ -3,10 +3,11 @@
 // be passed to the load() method defined in index.js.
 
 export default {
+	id:"hokus_fractus",
 	display_type:"svg", // either svg or canvas depending on explorable
 	debug:false,  // if set to true, draws dots on the control panel to help widget placement
-	controls_border:false,
-	display_border:true,
+	controls_border:"",
+	display_border:"",
 	debug_lattice:"debug-grid-16",
 	controls_grid:{nx:12,ny:12},
 	display_size: {width:500,height:500},

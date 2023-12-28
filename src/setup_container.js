@@ -37,24 +37,13 @@ export default (container_id,config)=>{
 		.attr("viewBox", "0 0 "+config.controls_size.width+" "+config.controls_size.height)
 
 
-	if (config.controls_border){
-		controls.append("rect").attr("class","border")
-		.attr("width",config.controls_size.width)
-		.attr("height",config.controls_size.height)
+	if (typeof config.controls_border === "string" && config.controls_border.length > 0){
+		controls.style("border",config.controls_border)
 	}
 	
-	if (config.display_border){
-		if (config.display_type=="svg"){
-		display.append("rect").attr("class","border")
-		.attr("width",config.display_size.width)
-		.attr("height",config.display_size.height)
-		} else {			
-			const ctx = display.node().getContext("2d");
-			ctx.strokeStyle = "black";
-			ctx.strokeRect(0, 0, config.display_size.width, config.display_size.height);
-		}
+	if (typeof config.display_border === "string" && config.display_border.length > 0){
+		display.style("border",config.display_border)
 	}
-
 
 	if (config.debug){		
 		controls.selectAll(".grid").data(grid.points).enter().append("circle").attr("r",2)

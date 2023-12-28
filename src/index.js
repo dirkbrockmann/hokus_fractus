@@ -1,11 +1,13 @@
 // this is the main file for the explorable that get's executed when the exporable is loaded
+import  'tachyons/css/tachyons.min.css'
 
-import './styles.css'
 import cfg from "./container_config.js" // imports default classes and styles and parameters for the container
 import setup_container from "./setup_container.js"
 import setup_interactions from "./setup_interactions.js"
 import setup_controls from "./controls.js"
 import {initialize as setup_simulation} from "./simulation.js"
+import meta from "./meta.js"
+import {go} from "./controls.js"
 
 // load is called in the webpage
 // the container configuration can be passed as an argument, including classes and styles for the 
@@ -35,4 +37,12 @@ const load = function (container_id,config=cfg) {
 	
 }
 
-export {load,cfg as config};
+const halt  = function(){
+	if(go.value()==1){
+			go.press(controls)
+	}
+}
+
+
+
+export {load,cfg as config,halt,meta};
