@@ -1,0 +1,18 @@
+.curve {
+	stroke:black;
+	stroke-width:2px;
+	fill:none;
+}
+
+.curve_old{
+	stroke:grey;
+	fill:none;
+	stroke-width:1px;
+}
+
+.curve_new {
+	stroke:darkred;
+	stroke-width:3px;
+	fill:none;
+}
+

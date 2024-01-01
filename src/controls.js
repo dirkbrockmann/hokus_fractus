@@ -1,7 +1,3 @@
-// this sets up the controls in the control panel
-// it adds the widgets to the container and generates attaches the widget to the 
-// variables and parameters defined in parameters.js
-
 import * as widgets from "d3-widgets"
 import {range,map} from "lodash-es"
 import fractals from "./fractals.js"
@@ -15,7 +11,6 @@ const fractal = {
 	label:"Fractals"
 }
 
-
 const radio = widgets.radio()
 				 .choices(fractal.choices)
 				 .id(fractal.id)
@@ -24,9 +19,6 @@ const radio = widgets.radio()
 				 .labelposition(cfg.widgets.radio_label_position)
 				 .buttonsize(cfg.widgets.radio_buttonsize)
 				 .fontsize(cfg.widgets.fontsize)
-
-
-
 
 const go = widgets.button().actions(["play"]).id("play")
 const reset = widgets.button().actions(["rewind"])
@@ -50,8 +42,8 @@ export default (controls,grid)=>{
  	reset.position(grid.position(cfg.widgets.resetbutton_anchor.x,cfg.widgets.resetbutton_anchor.y));
 
 
-	controls.selectAll(".button").data(buttons).enter().append(widgets.widget);
-	controls.selectAll(".radio").data([radio]).enter().append(widgets.widget)
+	controls.selectAll(null).data(buttons).enter().append(widgets.widget);
+	controls.selectAll(null).data([radio]).enter().append(widgets.widget)
 
 }
 
