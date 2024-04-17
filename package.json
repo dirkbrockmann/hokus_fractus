@@ -1,13 +1,13 @@
 {
-  "name": "@explorables/hokus_fractus",
+  "name": "hokus_fractus",
   "title": "Hokus Fractus!",
-  "subtitle": "Famous fractals",
+  "subtitle": "Die Entstehung selbstähnlicher Strukturen",
   "version": "1.1.3",
   "license": "CC-BY-4.0",
-  "description": "A collection of regular fractals that illustrates the nature of self-similarity",
+  "description": "Das Explorable erklärt wie selbstähnliche Strukturen, sogenannte Fraktale, durch iterative Prozesse entstehen, bei denen Teile durch kleinere Teile ersetzt werden. Hier wird immer ein Linienelement durch mehrere, kleinere Linienelemente ersetzt.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dirkbrockmann/hokus_fractus.git"
+    "url": "git+https://github.com/dirkbrockmann/hokus_fractus.git#cosmo"
   },
   "author": "Dirk Brockmann (https://rocs.hu-berlin.de)",
   "main": "./dist/index.js",

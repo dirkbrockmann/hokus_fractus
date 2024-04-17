@@ -1,5 +1,5 @@
 export default {
   "title": "Hokus Fractus!",
-  "subtitle": "Famous fractals",
-  "description": "A collection of regular fractals that illustrates the nature of self-similarity."
-  }
+  "subtitle": "Die Entstehung selbstähnlicher Strukturen",
+  "description": "Das Explorable erklärt wie selbstähnliche Strukturen, sogenannte Fraktale, durch iterative Prozesse entstehen, bei denen Teile durch kleinere Teile ersetzt werden. Hier wird immer ein Linienelement durch mehrere, kleinere Linienelemente ersetzt.",
+   }

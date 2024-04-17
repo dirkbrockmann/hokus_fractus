@@ -2,7 +2,7 @@ import {rotscale, add_points as add} from "./utils.js"
 
 export default [
 	{
-		name:"Sierpinksi Triangle",
+		name:"Sierpinksi Dreieck",
 		M:3,
 		K:10,
 		scale:1/2,
@@ -33,7 +33,7 @@ export default [
 		}
 	},
 	{
-		name:"Koch Snowflake",
+		name:"Koch Schneeflocke",
 		M:4,
 		K:7,
 		scale:1/3,
@@ -53,7 +53,7 @@ export default [
 		}
 	},
 	{
-		name:"Anti Koch Snowflake",
+		name:"Anti Koch Schneeflocke",
 		M:4,
 		K:7,
 		scale:1/3,
@@ -74,7 +74,7 @@ export default [
 	},
 	
 	{
-		name:"Dragon Curve",
+		name:"Drachenkurve",
 		M:2,
 		K:15,
 		scale:1/Math.sqrt(2),
@@ -100,7 +100,7 @@ export default [
 		}
 	},
 	{
-		name:"Terdragon Curve",
+		name:"Terdrachenkurve",
 		M:3,
 		K:9,
 		scale:1/Math.sqrt(3),
@@ -119,7 +119,7 @@ export default [
 		}
 	},
 	{
-		name:"Golden Dragon",
+		name:"Goldener Drache",
 		M:2,
 		K:15,
 		scale:1/2,
