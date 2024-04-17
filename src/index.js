@@ -5,15 +5,17 @@ import setup_interactions from "./setup_interactions.js"
 import setup_controls from "./controls.js"
 import {initialize as setup_simulation} from "./simulation.js"
 import meta from "./meta.js"
-import {go} from "./controls.js"
+import {go,reset as reset_all} from "./controls.js"
 
+
+var display,controls,grid;
 
 const load = function (container_id,config=cfg) {
 	
 	const container = setup_container(container_id,config);
-	const display = container.display;
-	const controls = container.controls;
-	const grid = container.grid;
+	display = container.display;
+	controls = container.controls;
+	grid = container.grid;
 	
 	setup_controls(controls,grid); 
 	setup_interactions(display,controls,config); 
@@ -27,6 +29,15 @@ const halt  = function(){
 	}
 }
 
+const reset  = function(){
+	if(go.value()==1){
+			go.press(controls)
+	}
+	
+	reset_all.press(controls)
+//	setup_all.press(controls)
+	
+}
 
 
-export {load,cfg as config,halt,meta};
+export {load,cfg as config,halt,meta,reset};

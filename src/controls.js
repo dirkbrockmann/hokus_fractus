@@ -21,7 +21,7 @@ const radio = widgets.radio()
 				 .fontsize(cfg.widgets.fontsize)
 
 const go = widgets.button().actions(["play"]).id("play")
-const reset = widgets.button().actions(["rewind"])
+const reset = widgets.button().actions(["rewind"]).id("reset")
 const buttons = [go,reset];
 
 
