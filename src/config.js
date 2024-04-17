@@ -5,7 +5,7 @@
 
 export default { 
 		widgets:{
-		fontsize:20,
+		fontsize:18,
 		playbutton_size: 120,
 		playbutton_anchor:{x:2,y:3},
 		resetbutton_size: 80,
