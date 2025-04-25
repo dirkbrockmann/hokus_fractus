@@ -35,9 +35,11 @@ const iterate = (display,config) => {
 		.attr("d",line)
 
 	tantor.transition().duration(1000).style("opacity",0).remove()
-	
 	onk.data([state.new_points_target]).transition().duration(500).attr("d",line)
-		.transition().attr("class",styles.curve)
+	.on("end", function() {
+	       d3.select(this)
+	         .attr("class", styles.curve);
+	   });
 	
 }
 
