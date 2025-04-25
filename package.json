@@ -4,7 +4,7 @@
   "subtitle": "Famous fractals",
   "description": "A collection of regular fractals that illustrates the nature of self-similarity.",
   "author": "Dirk Brockmann (https://synosy.github.io)",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
@@ -20,7 +20,6 @@
     "build": "vite build",
     "preview": "vite preview",
     "release": "vite build && git add . && git commit -m 'prep release' && npm version patch -m \"release v%s\" && git push --follow-tags && npm publish --access public"
-    
   },
   "keywords": [
     "complexity",
