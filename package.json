@@ -4,7 +4,7 @@
   "subtitle": "Famous fractals",
   "description": "A collection of regular fractals that illustrates the nature of self-similarity.",
   "author": "Dirk Brockmann (https://synosy.github.io)",
-  "version": "2.0.3",
+  "version": "2.0.4",
   "license": "CC-BY-4.0",
   "repository": {
     "type": "git",
